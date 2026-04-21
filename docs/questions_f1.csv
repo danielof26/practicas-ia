@@ -1,10 +1,11 @@
-﻿How many points does the race winner receive in the current Formula 1 scoring system?;25 points
-In what year and at which circuit was the first Formula 1 Grand Prix held?;13 May 1950 at Silverstone circuit
-How many Formula 1 World Drivers Championships did Michael Schumacher win in total?;Seven
-What does a yellow flag with red stripes indicate in Formula 1?;The existence on the track of an element that causes a reduction in grip, such as oil residues or car fragments
-Why did the FIA ban electronic driver aids such as traction control and semi-automatic gearboxes for the 1994 season?;Because of complaints that technology was determining race results more than driver skill
-How many points did first place receive in the 1950-1959 scoring system compared to the current system?;8 points in 1950-1959 compared to 25 points in the current system
-Which company has been responsible for managing and operating the Formula 1 championship since September 2016?;Liberty Media
-What was the greatest technological advance introduced by Lotus in 1962?;An aluminium monocoque chassis instead of the traditional tubular frame
-What event led to the implementation of the virtual safety car system in Formula 1?;The death of Jules Bianchi at the 2014 Japanese Grand Prix after crashing into a recovery crane at turn 7
-How many dry-weather tyre compounds are available in Formula 1 from 2024, and what are they called?;Five compounds from C1 to C5, named hard (white), medium (yellow) and soft (red) for race use
+﻿Question;Answer;Keywords;Category
+How many points does the race winner receive in the current Formula 1 scoring system?;25 points;25;Direct
+Who has been responsible for supplying the Formula 1 safety car since 1995?;Mercedes;Mercedes;Direct
+What does a yellow flag with red stripes indicate in Formula 1?;The existence on the track of an element that causes a reduction in grip, such as oil residues or car fragments;grip, oil, track;Descriptive
+What was the greatest technological advance introduced by Lotus in 1962?;An aluminium monocoque chassis instead of the traditional tubular frame;monocoque, chassis, tubular;Descriptive
+What is the function of the virtual safety car in Formula 1?;To neutralise the race when it is necessary to show a double yellow flag in some area of the track due to a risk for competitors or marshals, without requiring the appearance of the safety car;neutralise, yellow flag, risk;Descriptive
+How many points did first place receive in the 1950-1959 scoring system compared to the current system?;8 points in 1950-1959 compared to 25 points in the current system;8, 25;Comparative
+How did the number of Grand Prix races change from the early championships to the 2022 season?;Early championships averaged around 10-11 Grand Prix while the 2022 season had 22;22, 10, 11;Comparative
+How did the engine regulations change in 2014 compared to the previous era?;V8 engines were replaced by turbocharged 1.6-litre V6 units with a hybrid energy recovery system;V8, V6, hybrid;Comparative
+Which driver and team dominated Formula 1 the longest consecutive period and during which years?;Michael Schumacher and Ferrari dominated from 1999 to 2004 winning five consecutive drivers championships and six consecutive constructors championships;Schumacher, Ferrari, 1999, 2004;Reasoning
+What was the combined impact of the 2017 regulatory changes on Formula 1 cars?;The 2017 regulatory change improved aerodynamic downforce and combined with engine development resulted in the single-seaters becoming the fastest in history;engine, fastest, downforce;Reasoning
