@@ -28,14 +28,19 @@ with open(OUTPUT_CSV, newline='', encoding='utf-8-sig') as f:
         keys = [k.strip().lower() for k in keywords[i].split(',')]
         
         all_found = True
+        correct_answers = 0
 
         for k in keys:
             if k not in answer:
                 all_found = False
-                break
+            else:
+                correct_answers += 1
+
         
-        if all_found:
-            print(f"Question {i+1} answered correctly!!")
+        
+        print(f"Question {i+1} answered {(correct_answers/len(keys))*100:.2f}% correctly!!")
+        
+        if(all_found):
             points += 1
 
     
