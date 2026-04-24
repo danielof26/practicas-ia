@@ -8,14 +8,15 @@ import chromadb
 from llama_index.vector_stores.chroma import ChromaVectorStore
  
 
-DOCS_FOLDER = "/Users/danielonisfabian/Desktop/GRUPO_INVESTIGACION/docs"
-TEXT_FILE = os.path.join(DOCS_FOLDER, "source_text_f1.txt")
-QUESTIONS_CSV = os.path.join(DOCS_FOLDER, "questions_f1.csv")
-OUTPUT_CSV = os.path.join(DOCS_FOLDER, "rag_answers.csv")
-CHROMA_PATH = os.path.join(DOCS_FOLDER, "chromadb_f1")
-
-MODEL_NAME = "llama3.2"
+MODEL_NAME = "qwen3.5:4b"
 EMBED_MODEL = "snowflake-arctic-embed2"
+
+
+DOCS_FOLDER = "/Users/danielonisfabian/Desktop/GRUPO_INVESTIGACION/docs"
+TEXT_FILE = os.path.join(DOCS_FOLDER, "source_doc/source_text_f1.txt")
+QUESTIONS_CSV = os.path.join(DOCS_FOLDER, "source_doc/questions_f1.csv")
+OUTPUT_CSV = os.path.join(DOCS_FOLDER, f"results/rag_answers_{MODEL_NAME}.csv")
+CHROMA_PATH = os.path.join(DOCS_FOLDER, "chromadb_f1")
 
 
 llm = Ollama(

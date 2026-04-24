@@ -1,10 +1,12 @@
 import os
 import csv
 
+MODEL_NAME = "qwen3.5:4b"
+
 DOCS_FOLDER = "/Users/danielonisfabian/Desktop/GRUPO_INVESTIGACION/docs"
 
-QUESTIONS_CSV = os.path.join(DOCS_FOLDER, "questions_f1.csv")
-OUTPUT_CSV = os.path.join(DOCS_FOLDER, "rag_answers.csv")
+QUESTIONS_CSV = os.path.join(DOCS_FOLDER, "source_doc/questions_f1.csv")
+OUTPUT_CSV = os.path.join(DOCS_FOLDER, f"results/rag_answers_{MODEL_NAME}.csv")
 
 
 def print_spaces():
