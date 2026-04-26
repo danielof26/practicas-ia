@@ -4,7 +4,7 @@ from llama_index.llms.ollama import Ollama
 
 # --- CONFIGURACIÓN ---
 JUDGE_NAME = "gemma3:12b"  # El modelo que actuará como juez
-MODEL_NAME = "qwen3:4b"  # El modelo que actuará como juez
+MODEL_NAME = "llama3.2"  # El modelo que actuará como juez
 TEMA = "leyes"
 BASE_URL = "http://156.35.95.18:11434"
 
@@ -29,7 +29,7 @@ def evaluar_con_ia(pregunta, respuesta_esperada, respuesta_rag):
     RESPUESTA DEL ALUMNO (RAG): {respuesta_rag}
 
     Analiza y compara ambas respuestas, no hace falta que esté descrito excamente igual a la respuesta del profesor,
-    solo que se parezca semánticamente a la del profesor, es decir, que se explique el mismo concepto pero con diferentes palabras
+    es decir, que se explique el mismo concepto pero con diferentes palabras
 
     Responde ÚNICAMENTE con 'SÍ' o 'NO'.
     """

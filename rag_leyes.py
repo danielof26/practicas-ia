@@ -10,7 +10,7 @@ import chromadb
 import logging
 
 # --- CONFIGURACIÓN DE MODELOS ---
-MODEL_NAME = "qwen3:4b"
+MODEL_NAME = "llama3.2"
 EMBED_MODEL = "snowflake-arctic-embed2"
 BASE_URL = "http://156.35.95.18:11434"
 
