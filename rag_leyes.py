@@ -22,22 +22,22 @@ OUTPUT_CSV = os.path.join(DOCS_FOLDER, f"results/leyes/rag_answers_{MODEL_NAME}.
 CHROMA_PATH = os.path.join(DOCS_FOLDER, "chromadb_leyes")
 
 
-PROMPT = """Eres un experto jurídico implacable. Tu tarea es analizar el Real Decreto-ley 9/2026. 
+PROMPT = """Eres un asistente jurídico especializado en síntesis normativa. 
+Tu objetivo es extraer información de forma estructurada, técnica y extremadamente concisa.
 
-INSTRUCCIONES CRÍTICAS:
-1. Si la pregunta menciona sanciones o multas, BUSCA exhaustivamente tablas o listas con cantidades en euros (€).
-2. Es obligatorio identificar las infracciones como 'GRAVES' o 'MUY GRAVES' si aparecen.
-3. Utiliza términos técnicos: 'ineludible', 'desglosada en factura', 'coeficiente dinámico'.
-4. Si la respuesta implica cifras (ej. 401€, 601€, 2001€), inclúyelas sin falta.
-Responde de forma concisa y técnica en español."""
-
+INSTRUCCIONES DE RESPUESTA:
+1. Prioriza datos cuantitativos (porcentajes %, plazos y cuantías en €).
+2. Identifica claramente los sujetos (quién realiza la acción o a quién afecta).
+3. Si la información está en tablas de sanciones, relaciónala como: [Condición] -> [Multa].
+4. Usa un tono neutro y directo. Evita introducciones como "El texto dice...".
+5. Si una pregunta implica un "Cuándo", busca el umbral numérico que activa la norma."""
 
 # --- INICIALIZACIÓN ---
 llm = Ollama(
     model=MODEL_NAME,
     request_timeout=600.0, 
     system_prompt=PROMPT,
-    context_window=8000,
+    context_window=12000,
     base_url=BASE_URL,
     temperature=0.1
 )
@@ -45,7 +45,7 @@ llm = Ollama(
 Settings.embed_model = OllamaEmbedding(model_name=EMBED_MODEL)
 Settings.llm = llm
 # Configuramos trozos grandes para no romper los artículos de la ley
-Settings.node_parser = SentenceSplitter(chunk_size=512, chunk_overlap=50)
+Settings.node_parser = SentenceSplitter(chunk_size=800, chunk_overlap=100)
 
 logging.getLogger("httpx").setLevel(logging.WARNING)
 logging.getLogger("llama_index").setLevel(logging.WARNING)
@@ -72,8 +72,12 @@ else:
     )
 
 
-query_engine = index.as_query_engine(similarity_top_k=25)
-
+query_engine = index.as_query_engine(
+    vector_store_query_mode="mmr", # diversidad de fragmentos
+    similarity_top_k=3,
+    mmr_threshold=0.3,
+    response_mode="compact"
+)
 
 questions = []
 with open(QUESTIONS_CSV, newline='', encoding='utf-8-sig') as f:

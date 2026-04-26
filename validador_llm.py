@@ -28,14 +28,8 @@ def evaluar_con_ia(pregunta, respuesta_esperada, respuesta_rag):
     RESPUESTA MAESTRA: {respuesta_esperada}
     RESPUESTA DEL ALUMNO (RAG): {respuesta_rag}
 
-    CRITERIOS DE SUSPENSO (NO):
-    1. Si el alumno dice "no se menciona", "no hay información" o "no hay datos", y la RESPUESTA MAESTRA sí los tiene -> NO.
-    2. Si el alumno da una cifra económica diferente a la de la respuesta maestra -> NO.
-    3. Si el alumno dice que algo es "No grave" y el profesor dice que es "Muy grave" (o viceversa) -> NO.
-
-    CRITERIOS DE APROBADO (SÍ):
-    1. Si el alumno explica el concepto legal correctamente aunque use sinónimos.
-    2. Si el alumno incluye más detalles técnicos que el profesor, pero la base es correcta.
+    Analiza y compara ambas respuestas, no hace falta que esté descrito excamente igual a la respuesta del profesor,
+    solo que se parezca semánticamente a la del profesor, es decir, que se explique el mismo concepto pero con diferentes palabras
 
     Responde ÚNICAMENTE con 'SÍ' o 'NO'.
     """
