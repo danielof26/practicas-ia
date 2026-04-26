@@ -1,6 +1,7 @@
 .DS_Store
 venv/
 docs/chromadb_f1/
+docs/chromadb_leyes/
 __pycache__/
 *.pyc
 Agentes/

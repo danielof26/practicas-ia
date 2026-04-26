@@ -1,0 +1,33 @@
+﻿Question;Answer;Keywords
+¿Qué establece el Real Decreto-ley 9/2026 y a quién afecta?;El Real Decreto-ley 9/2026, de 14 de abril, introduce cambios relevantes en la forma de revisar y reflejar el precio del combustible en el transporte de mercancías por carretera. Afecta directamente a empresas transportistas, operadores de transporte y cargadores contractuales.;precio, combustible, mercancías, transportistas, operadores, cargadores
+¿Cuál es el objetivo principal de esta norma?;Garantizar que las variaciones del precio del combustible, tanto al alza como a la baja, se repercutan de forma obligatoria, automática y transparente en el precio final del transporte, reforzando la seguridad jurídica del sector.;variaciones, precio, combustible, obligatoria, automática, transparente
+¿La revisión del precio por combustible es ahora obligatoria?;"Sí. La revisión deja de ser negociable y pasa a ser ineludible. El ajuste por combustible:
+•	Debe aplicarse siempre que proceda.
+•	Debe figurar en la factura de forma desglosada.
+•	No puede eliminarse ni modificarse mediante pactos contractuales.
+Cualquier cláusula que contradiga esta obligación se considera nula.";ineludible, proceda,  factura, desglosada, nula
+¿Cuándo se aplica la revisión del precio del transporte?;Con carácter general, la revisión se aplica cuando el precio del combustible varía un 5 % o más respecto al precio de referencia. No obstante, las partes pueden pactar por escrito un umbral inferior.;5, umbral, inferior
+¿Ha cambiado la forma de calcular el ajuste por combustible?;"Sí. Se introduce una nueva fórmula de cálculo que incorpora un coeficiente dinámico (C), que tiene en cuenta:
+•	El precio del gasóleo antes de impuestos.
+•	El tipo de vehículo y su masa máxima autorizada (MMA).
+La fórmula general es:
+Variación del precio = (G × P × C) / 100
+Donde:
+•	G es la variación porcentual del precio del gasóleo.
+•	P es el precio del transporte pactado inicialmente.
+•	C es el coeficiente aplicable según el tipo de vehículo y el precio del combustible.";fórmula, coeficiente, dinámico, variación
+¿Es obligatorio desglosar en la factura la variación del precio del combustible?;Sí. El ajuste del precio del transporte derivado de la variación del precio del combustible debe reflejarse de forma desglosada en la factura.;desglosada, factura
+¿Qué ocurre si ese ajuste no aparece correctamente desglosado en la factura?;Puede dar lugar a sanciones administrativas para el cargador u obligado al pago, siempre que el transportista pueda demostrar que intentó cumplir correctamente con esta obligación.;sanciones, administrativas, cargador
+¿Cuándo puede la Administración sancionar al cargador?;"La Administración podrá sancionar cuando el transportista pruebe que:
+•	Emitió una factura con el ajuste por combustible desglosado y el cargador la rechazó o pidió modificarla, o
+•	El cargador impidió por cualquier medio la correcta emisión o aceptación de la factura.";desglosado, rechazó, modificarla, impidió
+¿De qué depende la cuantía de la sanción?;La sanción depende del importe total del precio del transporte y de si la infracción se considera grave o muy grave.;importe, transporte, grave
+¿Cuáles son las sanciones si el transporte es igual o inferior a 3.000 €?;"En estos casos se considera infracción GRAVE, con las siguientes multas:
+•	Transporte inferior a 1.000 € → multa de 401 € a 600 €
+•	Transporte entre 1.001 € y 1.500 € → multa de 601 € a 800 €
+•	Transporte entre 1.501 € y 3.000 € → multa de 801 € a 1.000 €";grave, 1000, 600, 1500, 800, 3000
+¿Cuáles son las sanciones si el transporte supera los 3000 €?;"En este supuesto se considera infracción MUY GRAVE, con las siguientes multas:
+•	Transporte entre 3.001 € y 4.000 € → multa de 1.001 € a 2.000 €
+•	Transporte entre 4.001 € y 6.000 € → multa de 2.001 € a 4.000 €
+•	Transporte superior a 6.000 € → multa de 4.001 € a 6.000 €";muy, grave, 4000, 2000, 6000
+¿Qué ocurre si hay reincidencia?;Si el responsable ya ha sido sancionado por una infracción muy grave en los últimos 12 meses, la multa puede ascender a entre 4.001 € y 18.000 €. ;infracción, grave, 12, meses, 18000
