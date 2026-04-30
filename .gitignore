@@ -5,3 +5,4 @@ docs/chromadb_leyes/
 __pycache__/
 *.pyc
 Agentes/
+.vscode/
