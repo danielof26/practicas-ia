@@ -87,3 +87,49 @@ query_engine = setup_rag(
     chunk_overlap= 200,
     top_k        = 15
 )
+
+
+scores = [[] for _ in range(len(questions))] # list of length N_QUESTIONS of lists with length N_EXEC
+last_answers = [""] * len(questions) #stores only the last response of each of the questions
+
+
+for exec in range(N_EXEC):
+    print(f"\n{'='*50}")
+    print(f"EXEC_ {exec+1}/{N_EXEC}")
+    print(f"{'='*50}")
+
+    responses = run_rag(query_engine, questions)
+
+    for i, (res, q) in enumerate(zip(responses, questions)):
+        score, details = validate(res, q["keywords"])
+        scores[i].append(score)
+        last_answers[i] = res
+        print(f"Score {score} | {details}")
+
+
+
+results = []
+print(f"\n{'='*50}")
+print("FINAL RESULTS")
+print(f"{'='*50}")
+
+
+for i, q in enumerate(questions):
+    scores_i = scores[i]
+    media = round(sum(scores_i)/len(scores_i),2)
+    minimal = min(scores_i)
+    maximal = max(scores_i)
+
+    print(f"[{i+1}] Media: {media} | Min: {minimal} | Max: {maximal}")
+    print(f"  Q: {q['question']}")
+    print(f"  Scores por ejecución: {scores_i}\n")
+
+    results.append({
+        "question":    q["question"],
+        "keywords":    q["keywords"],
+        "last_answer": last_answers[i],
+        "media":       media,
+        "minimal":      minimal,
+        "maximal":      maximal,
+        "scores":      str(scores)
+    })

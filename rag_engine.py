@@ -57,9 +57,9 @@ def setup_rag(model_name, embed_model, text_file, chroma_path, chroma_col,
 def run_rag(query_engine, questions):
 
     answers = []
-    for i, qs in enumerate(questions):
+    for i, q in enumerate(questions):
         print(f"  [{i+1}/{len(questions)}] {q['question'][:60]}...")
-        response = query_engine.query(qs["question"])
+        response = query_engine.query(q["question"])
         rag_answer = str(response).strip().replace('\n', ' ').replace(';', ',')
         answers.append(rag_answer)
     
