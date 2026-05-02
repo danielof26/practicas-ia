@@ -3,16 +3,21 @@ import csv
 import spacy
 from rag_engine import setup_rag, run_rag
 
-THEME = "f1"
+THEME = "leyes"
 MODEL_NAME = "llama3.2"
 EMBED_MODEL = "snowflake-arctic-embed2"
 N_EXEC = 5
+CHUNK_SIZE = 1024
+CHUNK_OVERLAP = 200
+TOP_K = 7
 DOCS_FOLDER = "./docs"
+SOURCE_FILE = "20042026_BOE-A-2026-8283.pdf"
 
-TEXT_FILE     = os.path.join(DOCS_FOLDER, f"source_doc/{THEME}/source_text_{THEME}.txt")
+TEXT_FILE     = os.path.join(DOCS_FOLDER, f"source_doc/{THEME}/{SOURCE_FILE}")
 QUESTIONS_CSV = os.path.join(DOCS_FOLDER, f"source_doc/{THEME}/questions_{THEME}.csv")
 CHROMA_PATH   = os.path.join(DOCS_FOLDER, f"chromadb_{THEME}")
 OUTPUT_CSV    = os.path.join(DOCS_FOLDER, f"results/{THEME}/validation_{THEME}_{MODEL_NAME}.csv")
+EXPERIMENTS_CSV = os.path.join(DOCS_FOLDER, "results/experiments.csv")
 
 
 PROMPTS = {
@@ -24,7 +29,8 @@ PROMPTS = {
         2. Identifica claramente los sujetos (quién realiza la acción o a quién afecta).
         3. Si la información está en tablas de sanciones, relaciónala como: [Condición] -> [Multa].
         4. Usa un tono neutro y directo. Evita introducciones como "El texto dice...".
-        5. Si una pregunta implica un "Cuándo", busca el umbral numérico que activa la norma.""",
+        5. Si una pregunta implica un "Cuándo", busca el umbral numérico que activa la norma.
+        /no_think""",
     
     "f1": """You are an expert F1 historian.
         Answer using ONLY the provided context.
@@ -83,9 +89,10 @@ query_engine = setup_rag(
     chroma_path  = CHROMA_PATH,
     chroma_col   = CHROMA_COLS[THEME],
     prompt       = PROMPTS[THEME],
-    chunk_size   = 1024,
-    chunk_overlap= 200,
-    top_k        = 15
+    chunk_size   = CHUNK_SIZE,
+    chunk_overlap= CHUNK_OVERLAP,
+    top_k        = TOP_K,
+    base_url     = 'http://156.35.95.18:11434'
 )
 
 
@@ -132,4 +139,51 @@ for i, q in enumerate(questions):
         "minimal":      minimal,
         "maximal":      maximal,
         "scores":      str(scores)
+    })
+
+
+with open(OUTPUT_CSV, 'w', newline='', encoding='utf-8') as f:
+    writer = csv.DictWriter(
+        f,
+        fieldnames=["question", "keywords", "last_answer", "media", "minimal", "maximal", "scores"],
+        delimiter=';'
+    )
+    writer.writeheader()
+    writer.writerows(results)
+
+
+
+medias = [round(sum(scores[i])/len(scores[i]), 2) for i in range(len(questions))]
+global_score = round(sum(medias)/len(medias), 2)
+
+print(f"\nScore global del experimento: {global_score}")
+ 
+file_exists = os.path.isfile(EXPERIMENTS_CSV)
+
+# counts lines to asign ID auto-incremental
+if file_exists:
+    with open(EXPERIMENTS_CSV, encoding='utf-8') as f:
+        id_actual = sum(1 for _ in f)
+else:
+    id_actual = 1
+
+
+with open(EXPERIMENTS_CSV, 'a', newline='', encoding='utf-8') as f:
+    writer = csv.DictWriter(
+        f,
+        fieldnames=["id", "chunk_size", "chunk_overlap", "top_k", "temperature", "model", "theme", "global_score"],
+        delimiter=';'
+    )
+    if not file_exists:
+        writer.writeheader()
+
+    writer.writerow({
+        "id":           id_actual,
+        "chunk_size":   CHUNK_SIZE,
+        "chunk_overlap":CHUNK_OVERLAP,
+        "top_k":        TOP_K,
+        "temperature":  0.1,
+        "model":        MODEL_NAME,
+        "theme":        THEME,
+        "global_score": global_score
     })
