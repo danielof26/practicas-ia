@@ -1,7 +1,5 @@
 id;chunk_size;chunk_overlap;top_k;temperature;model;score_f1;score_leyes
-1;1024;200;15;0.1;llama3.2;"{""media"": 0.81, ""max"": 1.0, ""min"": 0.0, ""var"": 0.0989, ""std"": 0.3145}";"{""media"": 0.21, ""max"": 0.5, ""min"": 0.0, ""var"": 0.035, ""std"": 0.187}"
-2;1024;200;15;0.1;qwen3:4b;"{""media"": 0.88, ""max"": 1.0, ""min"": 0.4, ""var"": 0.0381, ""std"": 0.1952}";N/A
-3;1024;200;15;0.1;gemma3:4b;"{""media"": 0.87, ""max"": 1.0, ""min"": 0.33, ""var"": 0.0544, ""std"": 0.2333}";"{""media"": 0.28, ""max"": 0.8, ""min"": 0.0, ""var"": 0.0606, ""std"": 0.2463}"
-4;800;100;3;0.1;gemma3:4b;"{""media"": 0.93, ""max"": 1.0, ""min"": 0.67, ""var"": 0.0194, ""std"": 0.1391}";"{""media"": 0.42, ""max"": 1.0, ""min"": 0.0, ""var"": 0.1414, ""std"": 0.376}"
-5;800;100;3;0.1;qwen3:4b;"{""media"": 0.83, ""max"": 1.0, ""min"": 0.0, ""var"": 0.1279, ""std"": 0.3576}";N/A
-6;800;100;3;0.1;llama3.2;"{""media"": 0.81, ""max"": 1.0, ""min"": 0.0, ""var"": 0.1013, ""std"": 0.3183}";"{""media"": 0.36, ""max"": 1.0, ""min"": 0.0, ""var"": 0.1165, ""std"": 0.3413}"
+1;1024;200;15;0.1;llama3.2:3b;"{""media_score"": 0.78, ""max_score"": 1.0, ""min_score"": 0.0, ""global_var"": 0.1084, ""global_std"": 0.3292, ""tiempo_total_ejecucion_seg"": 98.09}";"{""media_score"": 0.14, ""max_score"": 0.6, ""min_score"": 0.0, ""global_var"": 0.04, ""global_std"": 0.2001, ""tiempo_total_ejecucion_seg"": 306.87}"
+2;1024;200;15;0.1;qwen3.5:4b;"{""media_score"": 0.5, ""max_score"": 1.0, ""min_score"": 0.0, ""global_var"": 0.1011, ""global_std"": 0.3179, ""tiempo_total_ejecucion_seg"": 10489.82}";N/A
+3;1024;200;15;0.1;llama3.1:8b;"{""media_score"": 0.92, ""max_score"": 1.0, ""min_score"": 0.67, ""global_var"": 0.0171, ""global_std"": 0.1308, ""tiempo_total_ejecucion_seg"": 131.62}";"{""media_score"": 0.41, ""max_score"": 0.7, ""min_score"": 0.17, ""global_var"": 0.0303, ""global_std"": 0.174, ""tiempo_total_ejecucion_seg"": 1574.72}"
+4;1024;200;15;0.1;qwen3:8b;"{""media_score"": 0.97, ""max_score"": 1.0, ""min_score"": 0.67, ""global_var"": 0.0109, ""global_std"": 0.1044, ""tiempo_total_ejecucion_seg"": 523.99}";N/A

@@ -1,0 +1,11 @@
+question;keywords;last_answer;media;minimal;maximal;var;std;scores
+How many points does the race winner receive in the current Formula 1 scoring system?;25;The race winner receives 25 points.;0.8;0.0;1.0;0.2;0.4472;[1.0, 1.0, 1.0, 0.0, 1.0]
+Who has been responsible for supplying the Formula 1 safety car since 1995?;Mercedes;Mercedes has been responsible for supplying the Formula 1 safety car since 1995.;0.8;0.0;1.0;0.2;0.4472;[1.0, 1.0, 1.0, 0.0, 1.0]
+What does a yellow flag with red stripes indicate in Formula 1?;grip, oil, track;Empty Response;0.4;0.0;1.0;0.3;0.5477;[0.0, 1.0, 1.0, 0.0, 0.0]
+What was the greatest technological advance introduced by Lotus in 1962?;monocoque, chassis, tubular;In 1962, Lotus introduced a car with an aluminium monocoque chassis instead of the traditional tubular frame, which proved to be the greatest technological advance since the introduction of rear-engined cars.;0.6;0.0;1.0;0.3;0.5477;[0.0, 1.0, 0.0, 1.0, 1.0]
+What is the function of the virtual safety car in Formula 1?;neutralise, yellow flag, risk;Empty Response;0.0;0.0;0.0;0.0;0.0;[0.0, 0.0, 0.0, 0.0, 0.0]
+How many points did first place receive in the 1950-1959 scoring system compared to the current system?;8, 25;In the 1950-1959 scoring system, first place received 8 points, while in the current system, the race winner receives 25 points.;1.0;1.0;1.0;0.0;0.0;[1.0, 1.0, 1.0, 1.0, 1.0]
+How did the number of Grand Prix races change from the early championships to the 2022 season?;22, 10, 11;Empty Response;0.27;0.0;1.0;0.1888;0.4345;[1.0, 0.0, 0.0, 0.33, 0.0]
+How did the engine regulations change in 2014 compared to the previous era?;V8, V6, hybrid;In 2014, Formula 1 underwent a major regulatory change, replacing V8 engines with turbocharged 1.6-litre V6 units. The single-seaters now feature a hybrid power unit, adding an energy recovery system.;0.6;0.0;1.0;0.3;0.5477;[1.0, 1.0, 0.0, 0.0, 1.0]
+Which driver and team dominated Formula 1 the longest consecutive period and during which years?;Schumacher, Ferrari, 2000, 2004;Empty Response;0.4;0.0;1.0;0.3;0.5477;[0.0, 1.0, 0.0, 1.0, 0.0]
+What was the combined impact of the 2017 regulatory changes on Formula 1 cars?;engine, fastest, downforce;Empty Response;0.13;0.0;0.67;0.0898;0.2996;[0.67, 0.0, 0.0, 0.0, 0.0]
