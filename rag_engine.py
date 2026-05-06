@@ -13,10 +13,10 @@ def setup_rag(model_name, embed_model, text_file, chroma_path, chroma_col,
     
     ollama_params = dict(
         model=model_name,
-        request_timeout=1200.0,
+        request_timeout=1800.0,
         system_prompt=prompt,
         context_window=8000,
-        temperature=0.1
+        temperature=0.0
     )
 
     if base_url:

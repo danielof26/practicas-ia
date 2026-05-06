@@ -9,16 +9,16 @@ from rag_engine import setup_rag, run_rag
 # ─────────────────────────────────────────────
 # CONFIGURACIÓN
 # ─────────────────────────────────────────────
-THEME         = "leyes"
-MODEL_NAME    = "qwen3:8b"
+THEME         = "f1"
+MODEL_NAME    = "gemma3:12b"
 EMBED_MODEL   = "snowflake-arctic-embed2"
 N_EXEC        = 5
-CHUNK_SIZE    = 1024
-CHUNK_OVERLAP = 200
+CHUNK_SIZE    = 256
+CHUNK_OVERLAP = 50
 TOP_K         = 15
 DOCS_FOLDER   = "./docs"
-#SOURCE_FILE = "source_text_f1.txt"
-SOURCE_FILE   = "20042026_BOE-A-2026-8283.pdf"
+SOURCE_FILE = "source_text_f1.txt"
+#SOURCE_FILE   = "20042026_BOE-A-2026-8283.pdf"
 
 TEXT_FILE       = os.path.join(DOCS_FOLDER, f"source_doc/{THEME}/{SOURCE_FILE}")
 QUESTIONS_CSV   = os.path.join(DOCS_FOLDER, f"source_doc/{THEME}/questions_{THEME}.csv")
