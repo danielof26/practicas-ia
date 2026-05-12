@@ -1,0 +1,2 @@
+id;chunk_size;chunk_overlap;top_k;temperature;model;score_f1;score_leyes
+1;256;50;15;0.1;gemma3:12b;"{""media_score"": 1.0, ""max_score"": 1.0, ""min_score"": 1.0, ""global_var"": 0.0, ""global_std"": 0.0, ""tiempo_total_ejecucion_seg"": 154.14}";N/A
