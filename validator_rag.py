@@ -9,18 +9,19 @@ from rag_engine import setup_rag, run_rag
 # ─────────────────────────────────────────────
 # CONFIGURACIÓN
 # ─────────────────────────────────────────────
-THEME         = "f1"
-MODEL_NAME    = "llama3.1:8b"
+THEME         = "leyes"
+MODEL_NAME    = "llama3.2:3b"
 EMBED_MODEL   = "snowflake-arctic-embed2"
 N_EXEC        = 5
 CHUNK_SIZE    = 256
 CHUNK_OVERLAP = 50
-TOP_K         = 15
+TOP_K          = 15
+CONTEXT_WINDOW = 32000
 DOCS_FOLDER   = "./docs"
 ARCHITECTURE  = "xai"
 
-SOURCE_FILE = "source_text_f1.txt"
-#SOURCE_FILE = "20042026_BOE-A-2026-8283.pdf"
+#SOURCE_FILE = "source_text_f1.txt"
+SOURCE_FILE = "20042026_BOE-A-2026-8283.pdf"
 
 TEXT_FILE         = os.path.join(DOCS_FOLDER, f"source_doc/{THEME}/{SOURCE_FILE}")
 QUESTIONS_CSV     = os.path.join(DOCS_FOLDER, f"source_doc/{THEME}/questions_{THEME}.csv")
@@ -40,7 +41,7 @@ PROMPTS = {
         4. Usa un tono neutro y directo. Evita introducciones como "El texto dice...".
         /no_think""",
     "f1": """You are an expert F1 historian. Answer using ONLY provided context in English.
-        For each statement cite the source fragment like this: [Source: exact fragment used]"""
+        For each statement cite the source fragment like this: [Source: <verbatim text copied from context>]"""
 }
 
 SPACY_MODELS = {"leyes": "es_core_news_sm", "f1": "en_core_web_sm"}
@@ -52,10 +53,12 @@ CHROMA_COLS  = {"leyes": "leyes_docs",      "f1": "f1_docs"}
 nlp = spacy.load(SPACY_MODELS[THEME])
 
 def semantics(text):
+    """Returns the list of lemmas for a given text using spaCy."""
     doc = nlp(text.lower())
     return [token.lemma_ for token in doc]
 
 def validate(rag_answer, keys_string):
+    """Scores a RAG answer by checking how many keywords are present after lemmatisation."""
     sem_answer = semantics(rag_answer)
     key_list   = [k.strip() for k in keys_string.split(',')]
     n_found    = 0
@@ -89,6 +92,7 @@ query_engine, llm = setup_rag(
     chunk_size    = CHUNK_SIZE,
     chunk_overlap = CHUNK_OVERLAP,
     top_k         = TOP_K,
+    context_window = CONTEXT_WINDOW,
     base_url      = 'http://156.35.160.77:11434'
 )
 
@@ -102,8 +106,7 @@ last_answers       = [""] * len(questions)
 print(f"\nIniciando {N_EXEC} ejecuciones con arquitectura: {ARCHITECTURE}")
 tiempo_inicio_total = time.time()
 
-for exec in range(N_EXEC):
-    exec_num = exec + 1
+for exec_num in range(1, N_EXEC + 1):
     print(f"\n--- EJECUCIÓN {exec_num}/{N_EXEC} ---")
 
     # Pasar xai_log solo si arquitectura es xai
