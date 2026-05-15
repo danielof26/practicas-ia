@@ -10,7 +10,7 @@ from rag_engine import setup_rag, run_rag
 # CONFIGURACIÓN
 # ─────────────────────────────────────────────
 THEME         = "leyes"
-MODEL_NAME    = "llama3.2:3b"
+MODEL_NAME    = "gemma3:27b"
 EMBED_MODEL   = "snowflake-arctic-embed2"
 N_EXEC        = 5
 CHUNK_SIZE    = 256
